@@ -67,7 +67,7 @@ async function loadDirectoryPage(directory) {
             newDirHeading.textContent = item;
             let nList = document.createElement("ul");
             nList.className = "list-group list-group-flush";
-            getFolder(OWNER, REPO, `files/${directory}/${item}`)
+            getFolder(OWNER, REPO, `${directory}/${item}`)
             .then(json => {
                 json.forEach(item2 => {
                     let listItem = document.createElement("li");
