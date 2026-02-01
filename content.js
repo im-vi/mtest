@@ -4,17 +4,25 @@ const urlParams = new URLSearchParams(queryString);
 const site = urlParams.get('site');
 const dir = urlParams.get('dir');
 
+const OWNER = "im-vi";
+const REPO = "mtest";
+
+function hideLoadingSpinner() {
+    document.getElementById("spinner").remove();
+}
+
 async function loadHTMLPage(page) {
     fetch(`sites/${page}.html`)
     .then(response => response.text())
     .then(html => {
+        hideLoadingSpinner();
         document.getElementById("content").innerHTML = html;
     })
     .catch(err => console.error("Nie można załadować strony HTML:", err));
 }
 
 async function getFolder(owner, repo, path = "") {
-    const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
+    const url = `https://api.github.com/repos/${owner}/${repo}/contents/files/${path}`;
   
     const response = await fetch(url);
     if (!response.ok) {
@@ -31,8 +39,7 @@ async function getFolder(owner, repo, path = "") {
 }
 
 async function loadDirectoryPage(directory) {
-    let result = await getFolder("im-vi", "SejmTracker", directory);
-    console.log(result);
+    let result = await getFolder(OWNER, REPO, directory);
     let files = [];
     let directories = [];
     result.forEach(element => {
@@ -41,9 +48,6 @@ async function loadDirectoryPage(directory) {
             case "dir": directories.push(element.name); break;
         }
     });
-
-    console.log(files);
-    console.log(directories);
 
     let container = document.createElement("div");
     container.className = "container";
@@ -63,7 +67,7 @@ async function loadDirectoryPage(directory) {
             newDirHeading.textContent = item;
             let nList = document.createElement("ul");
             nList.className = "list-group list-group-flush";
-            getFolder("im-vi", "SejmTracker", `${directory}/${item}`)
+            getFolder(OWNER, REPO, `files/${directory}/${item}`)
             .then(json => {
                 json.forEach(item2 => {
                     let listItem = document.createElement("li");
@@ -77,6 +81,7 @@ async function loadDirectoryPage(directory) {
         })
     }
         
+    hideLoadingSpinner();
     document.getElementById("content").appendChild(container);
 }
 

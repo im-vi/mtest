@@ -51,7 +51,7 @@ let content = `<div class="container-fluid">
                             <li><a class="dropdown-item" href="?dir=ZajeciaTeoretyczne/02-podstawy-technik-wytwarzania"><i class="bi bi-arrow-return-right"></i> Podstawy technik wytwarzania</a></li>
                             <li><a class="dropdown-item" href="?dir=ZajeciaTeoretyczne/03-technologia-montazu-maszyn"><i class="bi bi-arrow-return-right"></i> Technologia montażu maszyn i urządzeń</a></li>
                             <li><a class="dropdown-item" href="?dir=ZajeciaTeoretyczne/04-maszynoznawstwo"><i class="bi bi-arrow-return-right"></i> Maszynoznawstwo</a></li>
-                            <li><a class="dropdown-item" href="?dir=ZajeciaTeoretyczne/05-organizacja-procesow-produkcji"><i class="bi bi-arrow-return-right"></i> Organizacja procesów produkcji</a></li>
+                            <li><a class="dropdown-item" href="?dir=ZajeciaTeoretyczne/05-oraganizacja-procesow-produkcji"><i class="bi bi-arrow-return-right"></i> Organizacja procesów produkcji</a></li>
                             <li><a class="dropdown-item" href="?dir=ZajeciaTeoretyczne/06-podstawy-nadzorowania-pracy-maszyn"><i class="bi bi-arrow-return-right"></i> Podstawy nadzorowania pracy maszyn<br>i urządzeń stosowanych w przemyśle<br>chemicznym</a></li>
                             <li><a class="dropdown-item" href="?dir=ZajeciaTeoretyczne/07-konstrukcje-maszyn"><i class="bi bi-arrow-return-right"></i> Konstrukcje maszyn</a></li>
                             <li><a class="dropdown-item" href="?dir=ZajeciaTeoretyczne/08-eksploatacja-maszyn"><i class="bi bi-arrow-return-right"></i> Eksploatacja maszyn i urządzeń przemysłu<br>technicznego</a></li>
